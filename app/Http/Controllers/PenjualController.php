@@ -23,21 +23,6 @@ class PenjualController extends BaseController
         return $this->sendResponse($table, "Successfully Search Penjual");
     }
 
-    // public function getDetailPenjual(Request $request)
-    // {
-    //     $validator = Validator::make($request->all(), [
-    //         'id' => 'required|exists:penjual,id'
-    //     ]);
-
-    //     if ($validator->fails()) {
-    //         return $this->sendError('Id tidak boleh kosong.', $validator->errors());
-    //     }
-
-    //     $success = Penjual::find($request->id);
-
-    //     return $this->sendResponse($success, "Successfully Show Detail Penjual");
-    // }
-
     public function getToko() 
     {
         $success = Penjual::select(['nama_toko'])->get()->toArray();

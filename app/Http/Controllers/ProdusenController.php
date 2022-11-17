@@ -18,19 +18,4 @@ class ProdusenController extends BaseController
 
         return $this->sendResponse($table, "Successfully Search Produsen");
     }
-
-    // public function getDetailProdusen(Request $request)
-    // {
-    //     $validator = Validator::make($request->all(), [
-    //         'id' => 'required'
-    //     ]);
-
-    //     if ($validator->fails()) {
-    //         return $this->sendError('Id tidak boleh kosong.', $validator->errors());
-    //     }
-    //     $id = $request->id;
-    //     $success = Produsen::find($id);
-
-    //     return $this->sendResponse($success, "Successfully Show Detail Penjual");
-    // }
 }

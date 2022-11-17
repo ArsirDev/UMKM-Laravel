@@ -36,10 +36,6 @@ Route::get('bisnis-umkm-get-produsen', [App\Http\Controllers\ProdusenController:
 
 // Penjualan
 
-// Route::get('get-detail-produsen', [App\Http\Controllers\ProdusenController::class,'getDetailProdusen']);
-
-// Route::get('get-detail-penjual', [App\Http\Controllers\PenjualController::class,'getDetailPenjual']);
-
 Route::get('bisnis-umkm-get-penjual', [App\Http\Controllers\PenjualController::class,'getPenjual']);
 
 Route::get('bisnis-umkm-get-toko', [App\Http\Controllers\PenjualController::class,'getToko']);
@@ -53,6 +49,8 @@ Route::post('bisnis-umkm-set-detail-produsen_request', [App\Http\Controllers\Req
 
 Route::get('bisnis-umkm-get-all-detail_produsen-request', [App\Http\Controllers\RequestProdusenController::class,'getAllDetailProdusenRequest']);
 
+Route::get('bisnis-umkm-get-all-status-request', [App\Http\Controllers\RequestProdusenController::class,'getAllStatusRequest']);
+
 Route::get('bisnis-umkm-get-specific-detail_produsen-request', [App\Http\Controllers\RequestProdusenController::class,'getSpesifictDetailProdusenRequest']);
 
 Route::get('bisnis-umkm-update-detail-produsen-request', [App\Http\Controllers\RequestProdusenController::class,'updateProdusenRequest']);
@@ -60,10 +58,21 @@ Route::get('bisnis-umkm-update-detail-produsen-request', [App\Http\Controllers\R
 Route::get('bisnis-umkm-delete-produsen-request', [App\Http\Controllers\RequestProdusenController::class,'deleteProdusenRequest']);
 
 
+
+
 // Laporan
 
 Route::post('bisnis-umkm-set-laporan', [App\Http\Controllers\LaporanController::class,'setLaporan']);
 
-Route::get('bisnis-umkm-get-laporan-produsen', [App\Http\Controllers\LaporanController::class,'getLaporanProdusen']);
+// Laporan Penjual
 
-Route::get('bisnis-umkm-get-laporan-penjual', [App\Http\Controllers\LaporanController::class,'getLaporanPenjual']);
+Route::get('bisnis-umkm-get-laporan-penjual', [App\Http\Controllers\LaporanPenjualController::class,'getLaporanPenjual']);
+
+Route::get('bisnis-umkm-delete-laporan-penjual', [App\Http\Controllers\LaporanPenjualController::class,'deleteLaporanProdusen']);
+
+
+// Laporan Produsen
+
+Route::get('bisnis-umkm-get-laporan-produsen', [App\Http\Controllers\LaporanProdusenController::class,'getLaporanProdusen']);
+
+Route::get('bisnis-umkm-delete-laporan-produsen', [App\Http\Controllers\LaporanProdusenController::class,'deleteLaporanProdusen']);

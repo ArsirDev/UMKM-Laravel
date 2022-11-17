@@ -56,6 +56,7 @@ class RequestProdusenController extends BaseController
             'alamat_penjual' => 'required',
             'number_phone_produsen' => 'required',
             'number_phone_penjual' => 'required',
+            'tanggal_pengambilan' => 'required',
             'qty' => 'required',
             'harga' => 'required',
             'image_produsen' => 'required',
@@ -80,6 +81,7 @@ class RequestProdusenController extends BaseController
             'alamat_penjual' => $request->alamat_penjual,
             'number_phone_produsen' => $request->number_phone_produsen,
             'number_phone_penjual' => $request->number_phone_penjual,
+            'tanggal_pengambilan' => $request->tanggal_pengambilan,
             'qty' => $request->qty,
             'harga' => $request->harga,
             'image_produsen' => asset($pathProdusen),
@@ -106,6 +108,15 @@ class RequestProdusenController extends BaseController
         $success = RequestProdusen::where('name_toko', 'like', "%" . $select . "%")->get();
 
         return $this->sendResponse($success, "Successfully Show Detail Request Produsen");
+    }
+
+    public function getAllStatusRequest(Request $request) {
+        
+        $select = $request->status_penitipan;
+
+        $success = RequestProdusen::where('status_penitipan', 'like', "%" . $select . "%")->get();
+
+        return $this->sendResponse($success, "Successfully Show Status Request Produsen");
     }
 
     public function updateProdusenRequest(Request $request) {

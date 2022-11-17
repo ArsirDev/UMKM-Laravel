@@ -26,11 +26,12 @@ return new class extends Migration
             $table->string('alamat_penjual');
             $table->string('number_phone_penjual');
             $table->string('number_phone_produsen');
+            $table->string('tanggal_pengambilan');
             $table->string('qty');
             $table->string('harga');
             $table->string('image_produsen');
             $table->string('image_penjual');
-            $table->string('status_penitipan')->nullable();
+            $table->enum('status_penitipan', ['MENUNGGU', 'DITERIMA', 'DITOLAK', 'SELESAI'])->default('MENUNGGU')->nullable();
             $table->timestamps();
         });
     }
